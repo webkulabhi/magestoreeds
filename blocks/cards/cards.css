@@ -12,8 +12,16 @@
 }
 
 .cards > ul > li {
-  border: var(--shape-border-width-1) solid var(--color-neutral-500);
+  border: var(--shape-border-width-1) solid var(--color-neutral-300);
   background-color: var(--background-color);
+  border-radius: var(--shape-border-radius-2);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.cards > ul > li:hover {
+  box-shadow: var(--shape-shadow-2);
+  transform: translateY(-2px);
 }
 
 .cards .cards-card-body {
