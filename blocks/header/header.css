@@ -39,7 +39,14 @@ header nav[aria-expanded='true'] {
 
 @media (min-width: 900px) {
   header .nav-wrapper {
-    position: relative;
+    position: sticky;
+    top: 0;
+    box-shadow: none;
+    transition: box-shadow 0.3s ease;
+  }
+
+  header .nav-wrapper.scrolled {
+    box-shadow: var(--shape-shadow-3);
   }
 
   header nav {

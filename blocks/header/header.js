@@ -511,6 +511,24 @@ export default async function decorate(block) {
     toggleMenu(nav, navSections, false);
   });
 
+  // add scroll shadow to sticky header on desktop
+  const handleScroll = () => {
+    navWrapper.classList.toggle('scrolled', window.scrollY > 0);
+  };
+
+  if (isDesktop.matches) {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+  }
+
+  isDesktop.addEventListener('change', () => {
+    if (isDesktop.matches) {
+      window.addEventListener('scroll', handleScroll, { passive: true });
+    } else {
+      window.removeEventListener('scroll', handleScroll);
+      navWrapper.classList.remove('scrolled');
+    }
+  });
+
   // hamburger for mobile
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');

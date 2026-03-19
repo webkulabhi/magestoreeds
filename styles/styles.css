@@ -143,6 +143,7 @@ html, body {
 
 html {
   font-size: 62.5%;
+  scroll-padding-top: var(--nav-height);
 }
 
 body {
@@ -164,6 +165,12 @@ body:not(.appear) {
 header {
   grid-row: 1;
   height: var(--nav-height);
+}
+
+@media (min-width: 900px) {
+  header {
+    height: auto;
+  }
 }
 
 main {
@@ -387,7 +394,7 @@ main > .section {
 }
 
 main > .section > div {
-  max-width: 1200px;
+  max-width: 1264px;
   margin: auto;
   padding: 0 var(--spacing-medium);
 }
